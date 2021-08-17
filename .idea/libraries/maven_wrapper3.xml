@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="maven-wrapper3">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../springboot-oath-example-security/.mvn/wrapper/maven-wrapper.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
