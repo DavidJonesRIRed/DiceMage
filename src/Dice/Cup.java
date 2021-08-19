@@ -61,24 +61,8 @@ public class Cup {
     }
 
     public int MaxRepeatingElementInPlace(){
-        //Integer [] arrA = faceUpValues.toArray();
         ArrayList<Integer> currentFaceUpValues = new ArrayList<>(CupListInteger());
         int power = 0;
-
-   /*     int size = currentFaceUpValues.size();
-        int maxCount=0;
-        int maxIndex=0;
-        for (int i = 0; i <size ; i++) {
-            //get the index to be updated
-            int index = currentFaceUpValues.get(i)% size;
-            currentFaceUpValues.set(index,(currentFaceUpValues.get(index) + size));
-        }
-        for (int i = 0; i <size ; i++) {
-            if(currentFaceUpValues.get(i)/size>maxCount){
-                maxCount=currentFaceUpValues.get(i)/size;
-                maxIndex=i;
-            }
-        }*/
 
         Set<Integer> distinct = new HashSet<>(currentFaceUpValues);
         for(Integer dieFace : distinct){
@@ -94,23 +78,21 @@ public class Cup {
         return power;
     }
 
-    public void MaxRepeatingElementInPlace(List<Integer> faceUpValues){
-        //Integer [] arrA = faceUpValues.toArray();
+    public int MaxRepeatingElementInPlace(List<Integer> faceUpValues){
+        ArrayList<Integer> currentFaceUpValues = new ArrayList<>(faceUpValues);
+        int power = 0;
 
-        int size = faceUpValues.size();
-        int maxCount=0;
-        int maxIndex=0;
-        for (int i = 0; i <size ; i++) {
-            //get the index to be updated
-            int index = faceUpValues.get(i)% size;
-            faceUpValues.set(index,(faceUpValues.get(index) + size));
-        }
-        for (int i = 0; i <size ; i++) {
-            if(faceUpValues.get(i)/size>maxCount){
-                maxCount=faceUpValues.get(i)/size;
-                maxIndex=i;
+        Set<Integer> distinct = new HashSet<>(currentFaceUpValues);
+        for(Integer dieFace : distinct){
+            if(Collections.frequency(currentFaceUpValues,dieFace) >= 3){
+                power = power + 1;
+                System.out.println("Max repeating Die number: " + dieFace + ", maximum count: " + Collections.frequency(currentFaceUpValues,dieFace));
             }
         }
-        System.out.println("Max repeating Die number: " + maxIndex + ", maximum count: " + maxCount);
+
+        if(power == 0){
+            System.out.println("No 3 or more matching die");
+        }
+        return power;
     }
 }
