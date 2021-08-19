@@ -1,9 +1,7 @@
 package Dice;
 
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Cup {
     List<Die> dice = new ArrayList<>();
@@ -60,6 +58,40 @@ public class Cup {
             selections.add(Integer.parseInt(number) -1);
         }
         return selections;
+    }
+
+    public int MaxRepeatingElementInPlace(){
+        //Integer [] arrA = faceUpValues.toArray();
+        ArrayList<Integer> currentFaceUpValues = new ArrayList<>(CupListInteger());
+        int power = 0;
+
+   /*     int size = currentFaceUpValues.size();
+        int maxCount=0;
+        int maxIndex=0;
+        for (int i = 0; i <size ; i++) {
+            //get the index to be updated
+            int index = currentFaceUpValues.get(i)% size;
+            currentFaceUpValues.set(index,(currentFaceUpValues.get(index) + size));
+        }
+        for (int i = 0; i <size ; i++) {
+            if(currentFaceUpValues.get(i)/size>maxCount){
+                maxCount=currentFaceUpValues.get(i)/size;
+                maxIndex=i;
+            }
+        }*/
+
+        Set<Integer> distinct = new HashSet<>(currentFaceUpValues);
+        for(Integer dieFace : distinct){
+            if(Collections.frequency(currentFaceUpValues,dieFace) >= 3){
+                power = power + 1;
+                System.out.println("Max repeating Die number: " + dieFace + ", maximum count: " + Collections.frequency(currentFaceUpValues,dieFace));
+            }
+        }
+
+        if(power == 0){
+            System.out.println("No 3 or more matching die");
+        }
+        return power;
     }
 
     public void MaxRepeatingElementInPlace(List<Integer> faceUpValues){

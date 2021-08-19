@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutomaticModuleUnloader">
+    <loaded-modules>
+      <module name="DiceMage" />
+    </loaded-modules>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="924b67c3-ca0f-4d12-b387-e6215af42fb9" name="Default Changelist" comment="" />
+    <list default="true" id="924b67c3-ca0f-4d12-b387-e6215af42fb9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/description.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/project-template.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/DiceMage/Dice/Cup.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/DiceMage/Dice/Die.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/DiceMage/GameLoop/GameLoop.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/DiceMage/HighLow/HighLow.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/DiceMage/Monster/Monster.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/DiceMage/Player/Player.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/DiceMage/com/DavidJones/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GameLoop/GameLoop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Player/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/DavidJones/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dice/Cup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dice/Cup.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +36,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="v005-GameLoop" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -108,6 +134,18 @@
       <updated>1627947727874</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
