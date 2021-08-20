@@ -13,6 +13,7 @@ public class Player {
     public Cup playerCup;
     public int mana;
     public List<Monster> playerMonsters = new ArrayList<Monster>();
+    public boolean isAlive;
 
     public Player(String name){
         health = 20;
@@ -20,6 +21,7 @@ public class Player {
         this.name = name;
         playerCup = new Cup(power);
         mana = 5;
+        isAlive = true;
     }
 
     public void addMonster(int monster){

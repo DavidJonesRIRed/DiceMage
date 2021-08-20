@@ -4,10 +4,8 @@ import Dice.Cup;
 import Monster.Monster;
 import Player.Player;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
+import java.lang.reflect.Array;
+import java.util.*;
 
 public class GameLoop {
     //variables
@@ -131,16 +129,58 @@ public class GameLoop {
                     player.health -= damage;
                 });
             }else if(currentActivePlayer.playerMonsters.size()>0) {
-                damage = currentActivePlayer.playerMonsters.get(0).attack + 1;
 
-                defendingPlayersInAttack.forEach(player -> {
-                    player.health -= damage;
-                });
+                System.out.println();
+                System.out.println("Would you like to attack player monsters? Y or N");
+                attackChoice = scanner .next().charAt(0);
+                attackChoice = Character.toUpperCase(attackChoice);
+                if(attackChoice != 'Y' && attackChoice != 'N') {
+                    System.out.println();
+                    System.out.println("You did not enter Y or N, monster phase ends");
+                    currentActivePlayer.mana -= 1;
+                    System.out.println("You have suffered mana burn, 1 mana lost");
+                }else if(attackChoice == 'Y'){
+
+                    defendingPlayersInAttack.forEach(player -> {
+                        attackMonsterVsMonster(currentActivePlayer,player);
+                    });
+
+                }else{
+                    damage = currentActivePlayer.playerMonsters.get(0).attack + 1;
+
+                    defendingPlayersInAttack.forEach(player -> {
+                        player.health -= damage;
+                    });
+                }
             }
-
         }
 
         checkAlive();
+    }
+
+    public void attackMonsterVsMonster(Player currentActivePlayer, Player defendingPlayer){
+        int remainingAttack;
+        if(defendingPlayer.playerMonsters.size() > 0){
+            for(int attackingMonsterIndex = 0; attackingMonsterIndex < currentActivePlayer.playerMonsters.size(); attackingMonsterIndex++){
+                for(int defendingPlayerMonsterIndex = 0; defendingPlayerMonsterIndex < defendingPlayer.playerMonsters.size(); defendingPlayerMonsterIndex++){
+                    if(currentActivePlayer.playerMonsters.get(attackingMonsterIndex).attack > defendingPlayer.playerMonsters.get(defendingPlayerMonsterIndex).defense){
+                        defendingPlayer.playerMonsters.get(defendingPlayerMonsterIndex).isAlive = false;
+                        System.out.println("Defending monster was destroyed!");
+                    }
+                }
+            }
+        }else {
+            System.out.println("No monsters to attack");
+        }
+
+
+        Iterator<Monster> itr = defendingPlayer.playerMonsters.iterator();
+        while (itr.hasNext()) {
+            Monster monster = itr.next();
+            if (monster.isAlive == false){
+                itr.remove();
+            }
+        }
     }
 
     public ArrayList<Player> defendingPlayers(int attackingPlayer){
